@@ -21,6 +21,10 @@ async function generateSQL(naturalLanguageQuery) {
 const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the SQL Query Generator API!");
+})
+
 app.post("/query", async (req, res) => {
     const naturalLanguageQuery = req.body.query;
 
